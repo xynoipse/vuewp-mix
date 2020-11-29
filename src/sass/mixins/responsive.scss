@@ -1,0 +1,66 @@
+// media mixins
+// @mixin mobile {
+// Extra small devices (phones, 600px and down)
+// @media only screen and (max-width: 599px) { @content; }
+// }
+@mixin mobile {
+  // Small devices (portrait tablets and large phones, 600px and up)
+  @media only screen and (min-width: 600px) {
+    @content;
+  }
+}
+@mixin tablet {
+  // Medium devices (landscape tablets, 768px and up)
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}
+@mixin desktop {
+  // Large devices (laptops/desktops, 1200px and up)
+  @media only screen and (min-width: 1200px) {
+    @content;
+  }
+}
+@mixin desktop-xl {
+  // Extra large devices (large laptops and desktops, 1800px and up)
+  @media only screen and (min-width: 1800px) {
+    @content;
+  }
+}
+
+// Usage sample
+// .header-title {
+//    font-size: 2rem;
+//    @include mobile {
+//       font-size: 1rem;
+//    }
+// }
+
+// Custom devices
+@mixin maxw($screen) {
+  //max width
+  @media (max-width: $screen+'px') {
+    @content;
+  }
+}
+
+@mixin minw($screen) {
+  //min width
+  @media (min-width: $screen+'px') {
+    @content;
+  }
+}
+
+@mixin maxminw($max, $min) {
+  //max and min width
+  @media only screen and (max-width: $max+'px') and (min-width: $min+'px') {
+    @content;
+  }
+}
+
+// Usage sample
+// 1400px window width and more
+// @include maxw(1400) {
+//     margin-bottom: 20px;
+//     margin-top: 20px;
+// }

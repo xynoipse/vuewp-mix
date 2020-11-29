@@ -1,0 +1,99 @@
+/* Gravity forms */
+
+// Gravity forms
+.gform_wrapper {
+  form {
+    .gform_heading {
+      margin-bottom: 0;
+    }
+    .gform_body {
+      ul.gform_fields {
+        & > li {
+          margin-top: 0;
+          padding: 0;
+          .gfield_label {
+            color: $black;
+          }
+          .ginput_container {
+            margin-top: 0;
+            input[type='text'],
+            input[type='file'],
+            select,
+            textarea {
+              outline: none !important;
+              border: 1px solid #c8c8c8;
+              border-radius: 25px;
+              padding: 5px;
+              margin-top: 10px;
+              font-size: 14px !important;
+              padding: 12px 17px !important;
+            }
+
+            textarea {
+              height: 100px;
+            }
+
+            input[type='file'] {
+              background: #fff;
+              width: 100%;
+              position: relative;
+              &::-webkit-file-upload-button {
+                width: 0;
+                opacity: 0;
+              }
+              &::after {
+                content: 'Browse..';
+                background: $red;
+                position: absolute;
+                top: 0;
+                right: 0;
+                color: #fff;
+                width: 110px;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+              }
+            }
+          }
+          &.gf_readonly {
+            display: none;
+          }
+          &.gf_display_date {
+            input {
+              user-select: none;
+              pointer-events: none;
+              background: $main;
+              margin-top: 0 !important;
+            }
+          }
+          &.gfield_error {
+            max-width: 100% !important;
+          }
+        }
+      }
+    }
+    .gform_footer {
+      input.gform_button {
+        padding: 5px 25px !important;
+        font-size: 14px !important;
+        padding: 10px 20px;
+        background: $main;
+        border: 1px solid $main;
+        transition: 0.5s;
+        display: inline-block;
+        color: #fff;
+        text-transform: uppercase;
+        &:hover {
+          color: $main;
+          background: transparent;
+        }
+      }
+    }
+    .validation_error,
+    .validation_message {
+      color: #f00 !important;
+    }
+  }
+}

@@ -1,0 +1,80 @@
+body {
+  &.login {
+    background: #f1f1f1;
+
+    #login h1 a {
+      height: 103px;
+      width: 100%;
+      margin-bottom: 10px;
+      background-size: contain;
+    }
+
+    #login_error,
+    .message {
+      border-left: 4px solid #00a0d2;
+    }
+
+    form,
+    #login_error,
+    .message {
+      background: #fff;
+    }
+
+    label {
+      color: #1a0f16;
+    }
+
+    #backtoblog a,
+    #nav a {
+      text-decoration: none;
+      color: #555d66;
+      &:hover {
+        color: #006799;
+      }
+    }
+  }
+
+  &.wp-core-ui {
+    #login {
+      .button-primary {
+        text-shadow: 0 0 0;
+        color: #fff;
+        background: #00669b;
+        border-color: #00669b;
+        -webkit-box-shadow: inset 0 1px 0 #00669b, 0 1px 0 rgba(0, 0, 0, 0.15);
+        box-shadow: inset 0 1px 0 #00669b, 0 1px 0 rgba(0, 0, 0, 0.15);
+
+        &.focus,
+        &.hover,
+        &:focus,
+        &:hover {
+          background: #0071a1;
+          border-color: #0071a1;
+          -webkit-box-shadow: 0 0 0;
+          box-shadow: 0 0 0;
+          color: #fff;
+          transition: all 0.3s;
+          -webkit-transition: all 0.3s;
+        }
+      }
+
+      input[type='text'],
+      input[type='password'],
+      input[type='checkbox'] {
+        &:focus {
+          border-color: #007cba;
+          box-shadow: 0 0 0 1px #007cba;
+          outline: 2px solid transparent;
+        }
+      }
+
+      input[type='checkbox']:checked:before {
+        color: #0071a1;
+      }
+    }
+  }
+}
+
+#tag-13 .delete {
+  display: none;
+}

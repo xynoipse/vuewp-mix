@@ -1,0 +1,38 @@
+.default-pagination {
+  a,
+  span {
+    text-decoration: none !important;
+    outline: none !important;
+    transition: 0.3s;
+    &.page-numbers {
+      color: $dark;
+      margin: 0 2px;
+      width: 27px;
+      height: 27px;
+      position: relative;
+      border-radius: 50%;
+      display: inline-block;
+      vertical-align: middle;
+      transition: 0.3s ease-in-out;
+      padding: 3px;
+      &:hover {
+        background-color: $main;
+        color: #fff;
+      }
+    }
+    &.current {
+      background-color: $main;
+      color: #fff;
+    }
+    &.prev,
+    &.next {
+      border: 1px solid;
+      i {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}

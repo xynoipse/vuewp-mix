@@ -1,0 +1,32 @@
+#page-banner {
+  height: 395px;
+  position: relative;
+  @include maxw(991) {
+    height: 300px;
+  }
+  @include maxw(420) {
+    height: 250px;
+  }
+  .page-banner-content {
+    height: 100%;
+    // @include minw(1200) {
+    //   max-width: 1050px;
+    // }
+    .overlay {
+      background-color: $overlay;
+    }
+    .banner-title {
+      height: 100%;
+      display: flex;
+      display: -webkit-flex;
+      align-items: flex-end;
+      .banner-text {
+        font-family: 'Montserrat';
+        font-size: 42px;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

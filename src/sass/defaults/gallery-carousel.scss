@@ -1,0 +1,118 @@
+.gallery-carousel {
+  display: none;
+  @include maxminw(1300, 1200) {
+    justify-content: center;
+    margin-bottom: 3.5rem;
+  }
+  @include maxminw(1110, 992) {
+    justify-content: center;
+    margin-bottom: 3.5rem;
+  }
+  @include maxminw(875, 769) {
+    justify-content: center;
+    margin-bottom: 3.5rem;
+  }
+  @include maxw(650) {
+    justify-content: center;
+    margin-bottom: 3.5rem;
+  }
+  .gallery-item {
+    flex: unset !important;
+    max-width: unset !important;
+    margin-bottom: 0 !important;
+  }
+  .slick-list {
+    .slick-track {
+      margin-left: unset;
+    }
+  }
+  .slider-prev,
+  .slider-next {
+    outline: none;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    z-index: 10;
+    padding: 4px 22px;
+    padding-top: 10px;
+    background: #fff;
+    border: 3px solid #fff;
+    transition: 0.3s;
+    @include maxminw(1300, 1200) {
+      top: auto;
+      bottom: -4rem;
+      transform: unset;
+    }
+    @include maxminw(1110, 992) {
+      top: auto;
+      bottom: -4rem;
+      transform: unset;
+    }
+    @include maxminw(875, 769) {
+      top: auto;
+      bottom: -4rem;
+      transform: unset;
+    }
+    @include maxw(650) {
+      top: auto;
+      bottom: -4rem;
+      transform: unset;
+    }
+    i {
+      font-size: 25px;
+    }
+    &:hover {
+      background: #cacaca;
+      border-color: #cacaca;
+    }
+    &.slick-disabled {
+      background: #2e2e2e;
+      border-color: #2e2e2e;
+    }
+  }
+  .slider-prev {
+    left: -5.5rem;
+    @include maxw(769) {
+      left: -1rem;
+    }
+    @include maxminw(1300, 1200) {
+      margin-right: 5rem;
+      left: unset;
+    }
+    @include maxminw(1110, 992) {
+      margin-right: 5rem;
+      left: unset;
+    }
+    @include maxminw(875, 769) {
+      margin-right: 5rem;
+      left: unset;
+    }
+    @include maxw(650) {
+      margin-right: 5rem;
+      left: unset;
+    }
+  }
+  .slider-next {
+    right: -5.5rem;
+    @include maxw(769) {
+      right: -1rem;
+    }
+    @include maxminw(1300, 1200) {
+      margin-left: 5rem;
+      right: unset;
+    }
+    @include maxminw(1110, 992) {
+      margin-left: 5rem;
+      right: unset;
+    }
+    @include maxminw(875, 769) {
+      margin-left: 5rem;
+      right: unset;
+    }
+    @include maxw(650) {
+      margin-left: 5rem;
+      right: unset;
+    }
+  }
+}

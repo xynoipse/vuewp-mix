@@ -1,0 +1,410 @@
+//===========================================
+//=            Global class styles          =
+//===========================================
+
+// Background image
+.bg-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+a,
+input {
+  text-decoration: none !important;
+  outline: none !important;
+}
+
+// default button
+.button {
+  text-decoration: none !important;
+  outline: none !important;
+  border-radius: 25px;
+  padding: 10px 20px;
+  background: $main;
+  border: 1.5px solid $main;
+  transition: 0.5s;
+  display: inline-block;
+  color: #fff;
+  &:hover {
+    border-color: $main;
+    color: $main;
+    background: transparent;
+  }
+}
+
+$searchHeight: 40px;
+.search-bar {
+  background: #fff;
+  display: flex;
+  border: 1px solid #dfe1e5;
+  box-shadow: none;
+  border-radius: 24px;
+  z-index: 3;
+  height: $searchHeight;
+  .search-input {
+    flex: 1;
+    display: flex;
+    padding: 2px 5px 5px;
+    padding-left: 15px;
+    input {
+      background-color: transparent;
+      border: none;
+      margin: 0;
+      padding: 0;
+      color: rgba(0, 0, 0, 0.87);
+      word-wrap: break-word;
+      outline: none;
+      display: flex;
+      flex: 100%;
+      -webkit-tap-highlight-color: transparent;
+      height: 34px;
+      font-size: 16px;
+      width: 100%;
+    }
+  }
+  .search-button {
+    height: $searchHeight;
+    width: $searchHeight;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    flex: 0 0 auto;
+    padding: 0;
+    padding-right: 13px;
+    outline: none;
+    text-decoration: none;
+    i {
+      transition: 0.3s;
+      color: #6b6b6b;
+    }
+    &:hover {
+      i {
+        color: $dark;
+      }
+    }
+  }
+}
+
+.view-more {
+  text-align: center;
+  .button {
+    border: 2.25px solid $gray;
+    background: transparent;
+    color: $gray;
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-family: 'Open Sans';
+    padding: 12px 45px;
+    cursor: pointer;
+    &:hover {
+      background: $gray;
+      color: #fff;
+    }
+  }
+}
+
+// Transparent Button
+.btn-transparent {
+  border: 1px solid #fff;
+  color: #fff;
+  background: transparent;
+  transition: 0.5s;
+  padding: 5px 40px;
+  &:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.4);
+  }
+}
+
+// Flex
+.align-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pos-absolute {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// Flex styles
+// Vertical and Horizontal center
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+// Flex absolute
+.absolute-flex-center {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// full height
+.full-height-carousel {
+  height: 100%;
+  .owl-stage-outer {
+    height: 100%;
+    .owl-stage {
+      height: 100%;
+      .owl-item {
+        height: 100%;
+        .item {
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+/**
+ * @link https://github.com/kenwheeler/slick/issues/1504
+ */
+.slick-list {
+  width: 100%; /* added this line only */
+}
+
+// Add transition on content load
+.reveal-item {
+  transform: translateY(100px);
+  opacity: 0;
+  transition: 1s;
+  &.reveal {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.highlight {
+  color: #ef4b25 !important;
+}
+
+.archive_pagination {
+  position: relative;
+  display: block;
+  width: 100%;
+  // padding-bottom: 80px;
+  h3 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    // margin: 20px auto 40px auto;
+    align-items: center;
+    .page-numbers {
+      position: relative;
+      background: #fff;
+      font-family: Montserrat;
+      font-size: 18px;
+      width: 40px;
+      display: inline-flex;
+      height: 40px;
+      justify-content: center;
+      align-items: center;
+      margin: 0px 2px;
+      color: #231f20;
+      transition: 0.3s;
+      &:hover {
+        background: $main;
+        color: #fff;
+      }
+    }
+    .current {
+      position: relative;
+      background: $main;
+      color: #fff;
+    }
+    .next.page-numbers {
+      width: 100%;
+      max-width: 44px;
+      // position: absolute;
+      // margin-left: 6px;
+      // margin-top: 3px;
+      i {
+        position: relative;
+        font-size: 14px;
+      }
+    }
+    .prev.page-numbers {
+      width: 100%;
+      max-width: 44px;
+      // position: absolute;
+      // margin-right: 6px;
+      // margin-top: 3px;
+      i {
+        position: relative;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+// https://meyerweb.com/eric/tools/dencoder/
+.svg-wave-top {
+  &:before {
+    content: url('data:image/svg+xml, %3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201440%20238%22%20%3E%3Cpath%20d%3D%22M1440%20160L1440%20238C1440%20238%201355%20235%201244%20205C1096%20170%201025%2095%20878%2085C690%2080%20668%20129%20450%20123C305%20116%20150%2046%20105%2041C49%2034%2029%2039%200%2043L0%2032L0%200C320%200%20400%200%20480%200C560%200%20640%200%20720%200C800%200%20880%200%20960%200C1040%200%201120%200%201200%200C1280%200%201360%200%201400%200L1440%200Z%22%20fill%3D%22%23f8fafc%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E');
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
+  & > div:first-child {
+    margin-top: -15vw !important;
+  }
+}
+
+.svg-wave-bottom {
+  &:after {
+    content: url('data:image/svg+xml, %3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201440%20238%22%20preserveAspectRatio%3D%22none%22%3E%3Cpath%20d%3D%22M0%2078L0%200C0%200%2085%203%20196%2033C344%2068%20415%20143%20562%20153C750%20158%20772%20109%20990%20115C1135%20122%201290%20192%201335%20197C1391%20204%201411%20199%201440%20195L1440%20206L1440%20238C1120%20238%201040%20238%20960%20238C880%20238%20800%20238%20720%20238C640%20238%20560%20238%20480%20238C400%20238%20320%20238%20240%20238C160%20238%2080%20238%2040%20238L0%20238Z%22%20fill%3D%22%23f8fafc%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E');
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
+  & > div:first-child {
+    margin-bottom: -14vw !important;
+  }
+}
+
+// Parent class must have position relative
+.overlay {
+  background-color: rgba(0, 0, 0, 0.35);
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: absolute;
+}
+
+.full-center {
+  align-items: center;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.z-index--1 {
+  z-index: -1;
+  position: relative;
+}
+.z-index-1 {
+  z-index: 1;
+  position: relative;
+}
+.z-index-2 {
+  z-index: 2;
+  position: relative;
+}
+.z-index-3 {
+  z-index: 3;
+  position: relative;
+}
+
+.archive-container {
+  padding-top: 50px;
+  // padding-bottom: 30px;
+  margin-bottom: -2.55%;
+  position: relative;
+  z-index: 5;
+  .heading {
+    color: $dark;
+    font-family: 'Montserrat';
+    font-size: 34px;
+    font-weight: 700;
+  }
+}
+
+.single-container {
+  padding-top: 35px;
+  // margin-bottom: -2.55%;
+  position: relative;
+  z-index: 5;
+  .content-container {
+    img {
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+    }
+    iframe {
+      max-width: 100%;
+      max-height: 500px;
+      @include maxw(991) {
+        max-height: 400px;
+      }
+      @include maxw(767) {
+        max-height: 300px;
+      }
+      @include maxw(575) {
+        max-height: 56vw;
+      }
+    }
+  }
+}
+
+.page-container {
+  padding-top: 50px;
+  // padding-bottom: 30px;
+  margin-bottom: -2.55%;
+  position: relative;
+  z-index: 5;
+}
+
+img {
+  font-family: 'object-fit: cover;';
+}
+
+.img-contain {
+  object-fit: contain;
+  font-family: 'object-fit: contain;';
+}
+
+.img-cover {
+  object-fit: cover;
+  font-family: 'object-fit: cover;';
+}
+
+// Scrollbar style
+// width
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+track ::-webkit-scrollbar-track {
+  background: #cacaca;
+}
+
+// Handle
+::-webkit-scrollbar-thumb {
+  background: $main;
+  border-radius: 10px;
+}
+
+// /* Handle on hover */
+// ::-webkit-scrollbar-thumb:hover {
+//   // background: #555;
+// }
+
+//=====  End of Global class styles  ======

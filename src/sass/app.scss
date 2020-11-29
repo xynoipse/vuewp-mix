@@ -1,0 +1,30 @@
+// Fonts - Replace ';' with '%3b' in google fonts css2 API
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400%3b500%3b600%3b700&family=Open+Sans:ital,wght@0,400%3b0,600%3b0,700%3b1,300&family=Nunito&display=swap');
+
+// Variables
+@import 'variables';
+
+// Vendors
+@import '~bootstrap/scss/bootstrap';
+@import '~mmenu-js/src/mmenu';
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
+@import '~@fancyapps/fancybox/dist/jquery.fancybox.min.css';
+
+// Mixins
+@import 'mixins/responsive';
+
+// Defaults
+@import 'defaults/core';
+@import 'defaults/global';
+@import 'defaults/gravityforms';
+@import 'defaults/page-banner';
+@import 'defaults/pagination';
+@import 'defaults/gallery-carousel';
+
+// Layout
+@import 'layout/header';
+@import 'layout/footer';
+
+// Pages
+@import 'pages/home';

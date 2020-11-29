@@ -1,0 +1,31 @@
+footer {
+  position: relative;
+  z-index: 3;
+  .footer-copyright {
+    background: $main;
+    @include maxw(575) {
+      padding: 10px 15px 0px 15px;
+    }
+    .footer-copyright-row {
+      max-width: 1140px;
+      margin: auto;
+      p {
+        position: relative;
+        font-size: 14px;
+        text-align: center;
+        margin: 10px auto;
+        color: #fff;
+        @include maxw(575) {
+          margin: 0px 0px 10px 0px;
+          text-align: center;
+        }
+        a {
+          color: #fff;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

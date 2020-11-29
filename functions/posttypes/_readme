@@ -1,0 +1,118 @@
+<?php
+
+function customCpt()
+{
+    $postType = 'custom-post';
+    $slug = 'custom-posts';
+    $taxonomy = 'custom-categories';
+    $textDomain = 'vuewp-mix';
+
+    /** Register Post Type */
+    $labels = array(
+        'name'               => _x('Plural Name', $textDomain),
+        'singular_name'      => _x('Singular Name', $textDomain),
+        'add_new'            => _x('Add New Singular Name', $textDomain),
+        'add_new_item'       => __('Add New Singular Name', $textDomain),
+        'edit_item'          => __('Edit Singular Name', $textDomain),
+        'new_item'           => __('New Singular Name', $textDomain),
+        'view_item'          => __('View Singular Name', $textDomain),
+        'search_items'       => __('Search Plural Name', $textDomain),
+        'not_found'          => __('No Plural Name found', $textDomain),
+        'not_found_in_trash' => __('No Plural Name found in Trash', $textDomain),
+        'parent_item_colon'  => __('Parent Singular Name:', $textDomain),
+        'menu_name'          => __('Plural Name', $textDomain),
+    );
+    $args = array(
+        'labels'              => $labels,
+        'hierarchical'        => false,
+        'description'         => 'description',
+        'taxonomies'          => array(),
+        'public'              => true,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'show_in_admin_bar'   => true,
+        'show_in_rest'        => false,
+        'menu_position'       => null,
+        'menu_icon'           => 'dashicons-admin-post',
+        'show_in_nav_menus'   => true,
+        'publicly_queryable'  => true,
+        'exclude_from_search' => false,
+        'has_archive'         => true,
+        'query_var'           => true,
+        'can_export'          => true,
+        'rewrite'             => array('slug' => $slug),
+        'capability_type'     => 'post',
+        'supports'            => array(
+            'title',
+            'editor',
+            'author',
+            'thumbnail',
+            'excerpt',
+            'revisions',
+        ),
+    );
+    register_post_type($postType, $args);
+
+    /** Register Taxonomy */
+    $labels = array(
+        'name'                  => _x('Plural Name', $textDomain),
+        'singular_name'         => _x('Singular Name', $textDomain),
+        'search_items'          => __('Search Plural Name', $textDomain),
+        'popular_items'         => __('Popular Plural Name', $textDomain),
+        'all_items'             => __('All Plural Name', $textDomain),
+        'parent_item'           => __('Parent Singular Name', $textDomain),
+        'parent_item_colon'     => __('Parent Singular Name', $textDomain),
+        'edit_item'             => __('Edit Singular Name', $textDomain),
+        'update_item'           => __('Update Singular Name', $textDomain),
+        'add_new_item'          => __('Add New Singular Name', $textDomain),
+        'new_item_name'         => __('New Singular Name', $textDomain),
+        'add_or_remove_items'   => __('Add or remove Plural Name', $textDomain),
+        'choose_from_most_used' => __('Choose from most used Plural Name', $textDomain),
+        'menu_name'             => __('Singular Name', $textDomain),
+    );
+    $args = array(
+        'labels'            => $labels,
+        'public'            => true,
+        'show_in_nav_menus' => true,
+        'show_admin_column' => false,
+        'hierarchical'      => false,
+        'show_tagcloud'     => true,
+        'show_ui'           => true,
+        'show_in_rest'      => true,
+        'query_var'         => true,
+        'rewrite'           => true,
+        'query_var'         => true,
+        'capabilities'      => array(),
+    );
+    register_taxonomy($taxonomy, array($postType), $args);
+
+    /** Options Sub Page */
+    acf_add_options_sub_page(array(
+        'page_title'    => 'Custom Settings',
+        'menu_title'    => 'Custom Settings',
+        'menu_slug'     => 'custom-settings',
+        'capability'    => 'manage_options',
+        'parent_slug'   => "edit.php?post_type=$postType",
+    ));
+
+    /** Pre get posts */
+    add_action('pre_get_posts', function ($query) use ($postType) {
+        if (is_admin()) return;
+
+        if ($query->is_main_query() && is_post_type_archive($postType)) {
+            $query->set('posts_per_page', 6);
+        }
+
+        return $query;
+    });
+
+    /** Disable single page view */
+    add_action('template_redirect', function () use ($postType) {
+        if (is_singular($postType)) {
+            wp_redirect(home_url(), 301);
+            exit;
+        }
+    });
+}
+
+add_action('init', 'customCpt');
